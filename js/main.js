@@ -17,7 +17,7 @@ console.log("numeri casuali:",arrayNumbers);
 newInnerText("numbers",arrayNumbers);
 
 // nascondiamo i numeri generati dopo 30 secondi
-setTimeout(hideNumbers, 3 * 1000);
+setTimeout(hideNumbers, 30 * 1000);
 
 
 
@@ -39,4 +39,20 @@ function newInnerText(elemId, contenuto){
 function hideNumbers(){
     newInnerText("message", "inserisci i 5 numeri che hai appena visto");
     newInnerText("numbers", "");
+}
+
+// creiamo una funzione che chiede all'utente di inserire i numeri
+function askNumbers(){
+    const userNumbers = [];
+
+    while(userNumbers.length < 5){
+        const newNumber = parseInt(prompt("Inserisci un numero"));
+
+        if(userNumbers.includes(newNumber) == false && numero > 0){
+            userNumbers.push(newNumber);
+        }
+
+    }
+
+    return userNumbers;
 }
