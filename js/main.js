@@ -23,6 +23,13 @@ setTimeout(hideNumbers, 3 * 1000);
 setTimeout(function(){
     const userNumbers = askNumbers();
     console.log("numeri utente:", userNumbers)
+
+    const guessedNumbers = compareNumbers(arrayNumbers,userNumbers);
+    console.log("numeri indovinati;", guessedNumbers);
+
+    newInnerText("message", "Hai indovinato i seguenti numeri");
+    newInnerText("numbers", guessedNumbers);
+
 }, 4 * 1000)
 
 
