@@ -13,7 +13,8 @@ while(arrayNumbers.length < 5){
 
 console.log("numeri casuali:",arrayNumbers);
 
-
+// scriviamo i numeri casuali dell'array nella pagina
+newInnerText("numbers",arrayNumbers);
 
 
 
@@ -24,3 +25,8 @@ console.log("numeri casuali:",arrayNumbers);
 function getRandomNumber(min,max){
     return Math.floor(Math.random()*(max-min + 1) + min);
 }
+
+// creiamo una funzione che cambia l innerText di un elemento "elemId" con il valore "contenuto"
+function newInnerText(elemId, contenuto){
+    document.getElementById(elemId).innerText = contenuto
+};
