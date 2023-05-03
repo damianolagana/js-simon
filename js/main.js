@@ -17,7 +17,13 @@ console.log("numeri casuali:",arrayNumbers);
 newInnerText("numbers",arrayNumbers);
 
 // nascondiamo i numeri generati dopo 30 secondi
-setTimeout(hideNumbers, 30 * 1000);
+setTimeout(hideNumbers, 3 * 1000);
+
+// chiediamo i numeri all'utente dopo i 30 secondi quindi creiamo un altro setTimeout
+setTimeout(function(){
+    const userNumbers = askNumbers();
+    console.log("numeri utente:", userNumbers)
+}, 4 * 1000)
 
 
 
@@ -48,11 +54,27 @@ function askNumbers(){
     while(userNumbers.length < 5){
         const newNumber = parseInt(prompt("Inserisci un numero"));
 
-        if(userNumbers.includes(newNumber) == false && numero > 0){
+        if(userNumbers.includes(newNumber) == false && newNumber > 0){
             userNumbers.push(newNumber);
         }
 
     }
 
     return userNumbers;
+}
+
+// creiamo una funziona che confronta i due array e restituisce quanti numeri sono uguali
+function compareNumbers(randomNumber,userNumbers){
+    const guessNumbers = [];
+
+    for (let i = 0; i < randomNumber.length; i++) {
+        const currentNumber = randomNumber[i];
+
+        if(userNumbers.includes(currentNumber)){
+            guessNumbers.push(currentNumber);
+        }
+        
+    }
+
+    return guessNumbers;
 }
