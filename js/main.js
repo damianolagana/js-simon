@@ -16,6 +16,9 @@ console.log("numeri casuali:",arrayNumbers);
 // scriviamo i numeri casuali dell'array nella pagina
 newInnerText("numbers",arrayNumbers);
 
+// nascondiamo i numeri generati dopo 30 secondi
+setTimeout(hideNumbers, 3 * 1000);
+
 
 
 /************ FUNCTIONS ***************/
@@ -30,3 +33,10 @@ function getRandomNumber(min,max){
 function newInnerText(elemId, contenuto){
     document.getElementById(elemId).innerText = contenuto
 };
+
+
+// creiamo una funzione che nasconda i nostir numeri
+function hideNumbers(){
+    newInnerText("message", "inserisci i 5 numeri che hai appena visto");
+    newInnerText("numbers", "");
+}
